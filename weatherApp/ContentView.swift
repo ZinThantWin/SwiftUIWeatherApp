@@ -8,20 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
-    var temp : Int = 90
+    @State var xNight : Bool  = false
+    
     var body: some View {
         ZStack {
-            LinearGradient(colors: [Color.blue,Color.blue.opacity(0.5)], startPoint: .top, endPoint: UnitPoint.bottom).ignoresSafeArea()
+            TopGradient(xNight: $xNight)
             VStack{
                 Text("Cupertino, CA")
                     .foregroundColor(.white)
                     .font(.largeTitle)
                 Spacer()
-                Image(systemName: "cloud.sun.fill")
+                Image(systemName: xNight ? "moon.stars.fill" : "cloud.sun.fill")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: UIScreen.main.bounds.width * 0.5,height: 100)
-                    .foregroundColor(.white)
+                    .foregroundStyle(.white, .yellow, .black)
                     .padding(.bottom,20)
                 Text("26°")
                     .font(.system(size: 70))
