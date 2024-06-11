@@ -20,7 +20,7 @@ struct EachDay: View {
             Image(systemName: temperature < 25 ? "snow" : temperature < 30 ? "cloud.bolt.rain.fill" : "cloud.sun")
                 .symbolRenderingMode(.hierarchical)
                 .resizable()
-                .foregroundColor(.red)
+                .foregroundColor(.yellow)
                 .scaledToFit()
                 .frame(width: 50, height: 50)
                 .padding(.vertical,15)
